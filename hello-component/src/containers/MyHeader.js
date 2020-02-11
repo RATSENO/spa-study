@@ -7,27 +7,36 @@ import Info from '../components/Info/Info';
 
 import logo from '../logo.svg';
 
-function MyHeader(){
+class MyHeader extends React.Component{
 
-    // const imgSrc = logo;
-    // const file = 'src/App.js'
-    // const href = 'https://reactjs.org';
-    // const title = 'Learn React';
+    constructor(){
+        super();
+        this.state = {};
+    }
 
-    const myData = {
-        logo,
-        fileName : 'src/App.js',
-        href : 'https://reactjs.org',
-        title : 'Learn React'
-    };
+    componentDidMount(){
+        //렌더링 후 콜백되는 함수
+        //여기서 주로 데이터를 초기 세팅한다.
+        //데이터는 주로 백엔드에서 JSON형태로 데이터를 가져온다.
+        this.setState({
+            logo,
+            fileName : 'src/App.js',
+            href : 'https://reactjs.org',
+            title : 'Learn React'
+        });
+    }
 
-    return(
-        <>
-            <LogoImage logo={myData}></LogoImage>
-            <Info fileName={myData.file}></Info>
-            <LearnReact href={myData.href} title={myData.title}></LearnReact>
-        </>
-    );
+    render(){
+        return(
+            <>
+                <LogoImage logo={this.state.logo}></LogoImage>
+                <Info fileName={this.state.file}></Info>
+                <LearnReact href={this.state.href} title={this.state.title}></LearnReact>
+            </>
+        );
+    }
+
+
 }
 
 export default MyHeader;
