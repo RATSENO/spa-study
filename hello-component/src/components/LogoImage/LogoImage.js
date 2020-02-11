@@ -1,8 +1,8 @@
 import React from 'react';
 
-function LogoImage({src}){
+function LogoImage({logo}){
     return(
-        <img src={src} className="App-logo" alt="logo" />
+        <img src={logo.logo} className="App-logo" alt="logo" />
     );
 };
 
