@@ -31,6 +31,17 @@ class MyHeader extends React.Component{
         //     href : 'https://reactjs.org',
         //     title : 'Learn React'
         // });
+
+        /* Promise를 사용할때
+        var self = this;
+        fetch('https://jsonplaceholder.typicode.com/photos/4')
+        .then(function(res){
+            return res.json();
+        })
+        .then(function(json){
+            self.setState(json);
+        })
+        */
     }
 
     render(){
