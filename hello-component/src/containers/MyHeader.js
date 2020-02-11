@@ -4,6 +4,7 @@ import './MyHeader.css'
 import LogoImage from '../components/LogoImage/LogoImage'
 import LearnReact from '../components/LearnReact/LearnReact';
 import Info from '../components/Info/Info';
+import TodoList from '../components/TodoList/TodoList';
 
 // import logo from '../logo.svg';
 
@@ -51,17 +52,23 @@ class MyHeader extends React.Component{
     render(){
 
         const { albumId, id, title, url, thumbnailUrl} = this.state;
+        const fakeData = [
+            'onestar1',
+            'onestar2',
+            'onestar3',
+            'onestar4',
+            'onestar5'
+        ]
 
         return(
             <div className="App-header">
                 <LogoImage logo={thumbnailUrl}></LogoImage>
                 <Info fileName={id}></Info>
                 <LearnReact href={url} title={title}></LearnReact>
+                <TodoList data={fakeData}></TodoList>
             </div>
         );
     }
-
-
 }
 
 export default MyHeader;
