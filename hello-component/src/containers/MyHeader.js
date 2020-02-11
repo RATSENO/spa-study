@@ -9,29 +9,36 @@ import logo from '../logo.svg';
 
 class MyHeader extends React.Component{
 
+    self = this;
+
     constructor(){
         super();
         this.state = {};
     }
 
-    componentDidMount(){
+    async componentDidMount(){
+
         //렌더링 후 콜백되는 함수
         //여기서 주로 데이터를 초기 세팅한다.
         //데이터는 주로 백엔드에서 JSON형태로 데이터를 가져온다.
-        this.setState({
-            logo,
-            fileName : 'src/App.js',
-            href : 'https://reactjs.org',
-            title : 'Learn React'
-        });
+        const data = await fetch('https://jsonplaceholder.typicode.com/photos/4');
+        const json = await data.json();
+        this.setState(json);
+
+        // this.setState({
+        //     logo,
+        //     fileName : 'src/App.js',
+        //     href : 'https://reactjs.org',
+        //     title : 'Learn React'
+        // });
     }
 
     render(){
         return(
             <>
-                <LogoImage logo={this.state.logo}></LogoImage>
-                <Info fileName={this.state.file}></Info>
-                <LearnReact href={this.state.href} title={this.state.title}></LearnReact>
+                <LogoImage logo={this.state.thumbnailUrl}></LogoImage>
+                <Info fileName={this.state.id}></Info>
+                <LearnReact href={this.state.url} title={this.state.title}></LearnReact>
             </>
         );
     }

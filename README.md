@@ -17,5 +17,8 @@ cd my-app
 npm start  
 
 npx 명령어는 설치와 실행을 동시하는 명령어이다.  
-Link : https://github.com/facebook/create-react-app
+Link : https://github.com/facebook/create-react-app  
+
+API 서버 : https://jsonplaceholder.typicode.com/  
+를 사용한다.
 
