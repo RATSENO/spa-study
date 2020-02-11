@@ -5,15 +5,19 @@ import LogoImage from '../components/LogoImage/LogoImage'
 import LearnReact from '../components/LearnReact/LearnReact';
 import Info from '../components/Info/Info';
 
-import logo from '../logo.svg';
+// import logo from '../logo.svg';
 
 class MyHeader extends React.Component{
 
-    self = this;
-
     constructor(){
         super();
-        this.state = {};
+        this.state = {
+            "albumId": 0,
+            "id": 0,
+            "title": '',
+            "url": '',
+            "thumbnailUrl": ''
+          };
     }
 
     async componentDidMount(){
@@ -45,11 +49,14 @@ class MyHeader extends React.Component{
     }
 
     render(){
+
+        const { albumId, id, title, url, thumbnailUrl} = this.state;
+
         return(
             <div className="App-header">
-                <LogoImage logo={this.state.thumbnailUrl}></LogoImage>
-                <Info fileName={this.state.id}></Info>
-                <LearnReact href={this.state.url} title={this.state.title}></LearnReact>
+                <LogoImage logo={thumbnailUrl}></LogoImage>
+                <Info fileName={id}></Info>
+                <LearnReact href={url} title={title}></LearnReact>
             </div>
         );
     }
