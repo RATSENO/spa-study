@@ -46,11 +46,11 @@ class MyHeader extends React.Component{
 
     render(){
         return(
-            <>
+            <div className="App-header">
                 <LogoImage logo={this.state.thumbnailUrl}></LogoImage>
                 <Info fileName={this.state.id}></Info>
                 <LearnReact href={this.state.url} title={this.state.title}></LearnReact>
-            </>
+            </div>
         );
     }
 
