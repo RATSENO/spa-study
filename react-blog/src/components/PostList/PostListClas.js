@@ -2,11 +2,10 @@ import React from 'react';
 
 class PostListClas extends React.Component{
 
-    constructor(props){
-        console.log(props);
-        super(props);
+    constructor(){
+        super();
         this.state = {
-            posts : props.posts,
+            posts : this.props.posts,
             clicked : false
         }
 

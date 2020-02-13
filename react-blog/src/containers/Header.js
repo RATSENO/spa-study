@@ -13,6 +13,29 @@ class Header extends React.Component {
             users: [],
             loading : true
         }
+        this.handleTestButton = this.handleTestButton.bind(this);
+    }
+
+    handleTestButton(){
+        this.setState({
+            loading : !this.state.loading
+        });
+        console.log(this.state.loading);
+        alert("클릭됨");
+    }
+
+    //arrow function 을 하게되면 this바인딩 필요 없음
+    handleTestButton2 = (a, b, e) => {
+        this.setState({
+            loading : !this.state.loading
+        });
+        console.log("===========handleTestButton2===========");
+        console.log(a);
+        console.log(b);
+        console.log(e);
+        console.log(this.state.loading);
+        alert("클릭됨");
+        console.log("===========handleTestButton2===========");
     }
 
     async componentDidMount(){
@@ -47,6 +70,9 @@ class Header extends React.Component {
                             <a className="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
                         </div>
                     </div>
+                    <div>
+                        <button type="button" class="btn btn-info" onClick={(e) => this.handleTestButton2("test1", "test2", e)}>TEST</button>
+                    </div>
                 </header>
 
                 <div className="nav-scroller py-1 mb-2">
@@ -68,7 +94,7 @@ class Header extends React.Component {
 
                 <HeadLine post={this.state.user}></HeadLine>
 
-                <PostListClas posts={this.state.users}></PostListClas>
+                <PostList posts={this.state.users}></PostList>
             </div>
         );
     }
