@@ -31,13 +31,13 @@ function PostList(props) {
                                             <a href="#" onClick={handleGoDetail} className="stretched-link">상세보기</a>
                                         </div>
                                         <div className="col">
-                                            <button type="button" class="btn btn-info" onClick={handleGoDetail}>상세보기</button>
+                                            <button type="button" className="btn btn-info" onClick={handleGoDetail}>상세보기</button>
                                         </div>
                                     </div>
                                 </div>
                                 
                             <div className="col-auto d-none d-lg-block">
-                            <svg className="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" ariaLabel="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+                            <svg className="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
                         </div>
                     </div>
                     
